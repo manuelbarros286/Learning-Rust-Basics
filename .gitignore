@@ -2,6 +2,7 @@
 /guessing-game/target/.rustc_info.json
 /guessing-game/target/debug/.cargo-lock
 /.idea/.gitignore
+**/*.rs.bk
 /guessing-game/target/debug/incremental/guessing_game-25q8frurn2v8g/s-hh2dt56h2f-02ht376-dv9a3nrj5iya8smluwef28i5d/2y31s8x9vk6nr26nzdjzevg42.o
 /guessing-game/target/debug/incremental/guessing_game-25q8frurn2v8g/s-hh2dt56h2f-02ht376-dv9a3nrj5iya8smluwef28i5d/2ycfu8s2kb4kbynebz9xp8fs8.o
 /guessing-game/target/debug/incremental/guessing_game-25q8frurn2v8g/s-hh2dt56h2f-02ht376-dv9a3nrj5iya8smluwef28i5d/3ikefkjmsvfi7cgmghpodw687.o
