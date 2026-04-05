@@ -1,5 +1,3 @@
-use std::any::Any;
-use crate::Data::Number;
 
 enum Data {
     Number(i32),
@@ -8,7 +6,7 @@ enum Data {
     Bool(bool),
 }
 fn main() {
-    let _numVar = Data::Number(2);
+    let _num_var = Data::Number(2);
     let _string = Data::String(String::from("hello"));
     let _float = Data::Float(3.14);
     let _bool = Data::Bool(true);
