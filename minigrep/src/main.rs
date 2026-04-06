@@ -1,6 +1,7 @@
 use std::env;
 use std::fs;
-
+use std::io::{self, BufRead};
+use colored::*;
 fn main() {
     //collect command line argument into a vector of strings
     let args: Vec<String> = env::args().collect();
@@ -15,11 +16,16 @@ fn main() {
 
     println!("query is {:?} in file {:?}", query, file_path);
 
-    let contents = fs::read_to_string(file_path).expect("Something went wrong reading the file");
+    let file = fs::File::open(file_path).expect("file not found");
+    let reader = io::BufReader::new(file);
 
-    for line in contents.lines() {
-        if line.to_lowercase().contains(&query.to_lowercase()) {
-            println!("{}", line);
+
+    let colored_query = query.red().bold().to_string();
+    for (index, line) in reader.lines().enumerate() {
+        let line = line.expect("something went wrong reading the file");
+        if line.contains(query) {
+            let highlighted = line.replace(query, &colored_query);
+            println!("{}: {}", (index + 1).to_string().cyan(), highlighted);
         }
     }
 }

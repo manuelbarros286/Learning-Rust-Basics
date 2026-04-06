@@ -29,6 +29,29 @@ fn main() {
             }
         }
         Data::Bool(x) => println!("The boolean is {}", x),
-        _ => println!("Variant cannot be matched"),
     }
+
+    let x = if_let();
+    println!("if let {:?}", x);
+
+    counter();
+}
+
+fn if_let() -> i32 {
+    let condition = true;
+    let statement = if condition { 5 } else { 6 };
+    return statement;
+}
+
+fn counter() {
+    let mut counter: u32 = 0;
+
+    let result = loop {
+        counter += 1;
+        if counter > 10 {
+            break counter * 2;
+        }
+    };
+    println!("The result is {}", result);
+    assert_eq!(result, 22)
 }
